@@ -1,3 +1,4 @@
+import 'package:atividade_disciplina_banco_dados_ifce/ui/inflow_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/login_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/signup_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/spl_screen.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: InflowScreen(),
     );
   }
 }

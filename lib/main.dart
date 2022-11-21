@@ -1,3 +1,4 @@
+import 'package:atividade_disciplina_banco_dados_ifce/ui/add_inflow_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/inflow_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/login_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/signup_screen.dart';

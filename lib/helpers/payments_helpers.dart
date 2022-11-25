@@ -29,7 +29,7 @@ class PaymentHelper {
 
   Future<Database> initDb() async {
     final databasesPath = await getDatabasesPath();
-    final path = join(databasesPath, "payments.db");
+    final path = join(databasesPath, "payments1.db");
 
     return await openDatabase(path, version: 1,
         onCreate: (Database db, int newerVersion) async {

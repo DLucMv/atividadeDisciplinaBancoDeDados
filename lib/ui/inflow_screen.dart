@@ -49,8 +49,10 @@ class _InflowScreenState extends State<InflowScreen> {
   Widget _inflowCard(BuildContext context, int index) {
     return GestureDetector(
       child: Card(
+        color: Colors.white,
+        elevation: 5,
         child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Row(
             children: [
               Container(
@@ -68,26 +70,66 @@ class _InflowScreenState extends State<InflowScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      inflows[index].preco ?? "",
-                      style: const TextStyle(
-                          fontSize: 22.0, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      inflows[index].parcela ?? "",
-                      style: const TextStyle(
-                        fontSize: 18.0,
-                      ),
-                    ),
-                    Text(
-                      inflows[index].dataRecebimento ?? "",
-                      style: const TextStyle(
-                        fontSize: 18.0,
-                      ),
-                    ),
-                    Text(
                       inflows[index].origem ?? "",
                       style: const TextStyle(
                           fontSize: 22.0, fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Valor: ",
+                            style: TextStyle(
+                                fontSize: 18.0, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            inflows[index].preco ?? "",
+                            style: const TextStyle(
+                                fontSize: 18.0, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Text(
+                            "Parcela:  ",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          Text(
+                            inflows[index].parcela ?? "",
+                            style: const TextStyle(
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Text(
+                            "Data: ",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          Text(
+                            inflows[index].dataRecebimento ?? "",
+                            style: const TextStyle(
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -110,32 +152,32 @@ class _InflowScreenState extends State<InflowScreen> {
               onClosing: () {},
               builder: (context) {
                 return Container(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        _showInflowPage(inflow: inflows[index]);
-                      },
-                      child: Text(
-                        "Editar",
-                        style: TextStyle(color: Colors.blue, fontSize: 20.0),
+                        onPressed: () {
+                          Navigator.pop(context);
+                          _showInflowPage(inflow: inflows[index]);
+                        },
+                        child: const Text(
+                          "Editar",
+                          style: TextStyle(color: Colors.blue, fontSize: 20.0),
+                        ),
                       ),
-                    ),
                       TextButton(
-                          onPressed: () {
-                            helper.deleteInflow(inflows[index].id!);
-                            setState(() {
-                              inflows.removeAt(index);
-                              Navigator.pop(context);
-                            });
-                          },
-                          child: Text(
-                            "Deletar",
-                            style: TextStyle(color: Colors.red, fontSize: 20.0),
-                          ),
+                        onPressed: () {
+                          helper.deleteInflow(inflows[index].id!);
+                          setState(() {
+                            inflows.removeAt(index);
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: const Text(
+                          "Deletar",
+                          style: TextStyle(color: Colors.red, fontSize: 20.0),
+                        ),
                       ),
                     ],
                   ),

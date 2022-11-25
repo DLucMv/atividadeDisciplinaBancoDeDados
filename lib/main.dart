@@ -1,7 +1,9 @@
 import 'package:atividade_disciplina_banco_dados_ifce/ui/add_inflow_screen.dart';
+import 'package:atividade_disciplina_banco_dados_ifce/ui/home_page.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/inflow_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/login_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/payment_screen.dart';
+import 'package:atividade_disciplina_banco_dados_ifce/ui/side_menu.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/signup_screen.dart';
 import 'package:atividade_disciplina_banco_dados_ifce/ui/spl_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white60,
       ),
-      home: PaymentsScreen(),
+      home: HomePage(),
     );
   }
 }

@@ -11,28 +11,15 @@ class PaymentsScreen extends StatefulWidget {
 }
 
 class _PaymentsScreenState extends State<PaymentsScreen> {
-
   PaymentHelper helper = PaymentHelper();
 
   List<Payment> payments = [];
 
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
     _getAllPayments();
-
-    /*Payment p = Payment();
-    p.preco = "1000";
-    p.parcela = "1";
-    p.dataPagamento = "23/10/2022";
-    p.credor = "Mercadinho";
-
-    helper.savePayment(p);*/
-
-    //helper.getAllPayments().then((list) => print(list));
-
 
   }
 
@@ -43,6 +30,9 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
         title: const Text('Pagamentos'),
         centerTitle: true,
         backgroundColor: Colors.blue,
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        ],
       ),
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
@@ -201,14 +191,13 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
         });
   }
 
-
   void _showPaymentPage({Payment? payment}) async {
     final recPayment = await Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => AddPaymentScreen(
-              payment: payment,
-            )));
+                  payment: payment,
+                )));
     if (recPayment != null) {
       if (payment != null) {
         await helper.updatePayment(recPayment);
@@ -219,7 +208,6 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
     }
   }
 
-
   void _getAllPayments() {
     helper.getAllPayments().then((list) {
       setState(() {
@@ -227,6 +215,4 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
       });
     });
   }
-
-
 }

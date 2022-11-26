@@ -84,7 +84,7 @@ class _AddPaymentScreenState extends State<AddPaymentScreen> {
                 height: 140.0,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  image: DecorationImage(image: AssetImage("assets/images/dinheiros.png"),),
+                  image: DecorationImage(image: AssetImage("assets/images/dinheirosout.png"),),
                 ),
               ),
             ),

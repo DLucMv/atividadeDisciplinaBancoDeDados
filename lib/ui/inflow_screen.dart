@@ -25,10 +25,12 @@ class _InflowScreenState extends State<InflowScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recebimentos'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
+          title: const Text('Recebimentos'),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          ]),
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -75,7 +77,7 @@ class _InflowScreenState extends State<InflowScreen> {
                           fontSize: 22.0, fontWeight: FontWeight.bold),
                     ),
                     Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Row(
                         children: [
                           const Text(

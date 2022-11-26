@@ -48,7 +48,7 @@ class TeamPage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-              child: Text("Leone", style: TextStyle(fontSize: 18.0,),),
+              child: Text("Leone Hollanda", style: TextStyle(fontSize: 18.0,),),
             ),
           ],
         ),

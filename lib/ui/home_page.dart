@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bem Vindo"),
+        title: const Text("Bem Vindo"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                           fontSize: 22.0, fontWeight: FontWeight.bold),
                     ),
-                    Padding(padding: EdgeInsets.all(10.0)),
+                    const Padding(padding: EdgeInsets.all(10.0)),
                     Padding(
                       padding: const EdgeInsets.only(left: 0.0),
                       child: Row(
@@ -162,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                           fontSize: 22.0, fontWeight: FontWeight.bold),
                     ),
-                    Padding(padding: EdgeInsets.all(10.0)),
+                    const Padding(padding: EdgeInsets.all(10.0)),
                     Padding(
                       padding: const EdgeInsets.only(left: 0.0),
                       child: Row(

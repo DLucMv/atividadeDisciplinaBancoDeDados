@@ -1,4 +1,4 @@
-import 'package:atividade_disciplina_banco_dados_ifce/ui/login_screen.dart';
+import 'package:atividade_disciplina_banco_dados_ifce/ui/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "N",
+                    "Minha ",
                     style: TextStyle(
                       decoration: TextDecoration.none,
                       color: Colors.white.withOpacity(0.8),
@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     size: 45,
                   ),
                   Text(
-                    "ME Provisório",
+                    " Carteira",
                     style: TextStyle(
                       decoration: TextDecoration.none,
                       color: Colors.white.withOpacity(0.8),
@@ -96,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((_) {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => LoginScreen()));
+          MaterialPageRoute(builder: (context) => HomePage()));
     });
   }
 }

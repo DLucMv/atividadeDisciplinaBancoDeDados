@@ -31,7 +31,12 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
         centerTitle: true,
         backgroundColor: Colors.blue,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {
+            showSearch(
+                context: context,
+                delegate: MySearchDelegate()
+            );
+          }, icon: const Icon(Icons.search)),
         ],
       ),
       backgroundColor: Colors.white,
@@ -215,4 +220,68 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
       });
     });
   }
+}
+
+class MySearchDelegate extends SearchDelegate{
+
+  List<String> searchResults = [
+    'Mercado',
+    'Aluguel',
+    'Internet',
+    'Gasolina',
+  ];
+
+  @override
+  List<Widget>? buildActions(BuildContext context) => [
+    IconButton(
+      icon: const Icon(Icons.clear),
+      onPressed: (){
+
+      },
+    )
+  ];
+
+  @override
+  Widget? buildLeading(BuildContext context) => IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: (){
+        if(query.isEmpty){
+          close(context, null);
+        }else{
+          query = '';
+        }
+      },
+    );
+
+
+
+  @override
+  Widget buildResults(BuildContext context) => Text(
+      query,
+      style: const TextStyle(fontSize: 24, fontWeight: FontWeight.normal),
+    );
+
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> suggestions = searchResults.where((searchResult){
+      final result = searchResult.toLowerCase();
+      final input = query.toLowerCase();
+
+      return result.contains(input);
+    }).toList();
+    return ListView.builder(
+        itemCount: suggestions.length,
+        itemBuilder: (context, index){
+      final suggestion = suggestions[index];
+      return ListTile(
+        title: Text(suggestion),
+        onTap: (){
+          query = suggestion;
+          showResults(context);
+        },
+      );
+    });
+  }
+
 }
